@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Art/Blocks/Sidewalk.png" type="Texture" id=1]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 15, 0, 15, 15, 0, 15, 0, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 15, 0, 15, 15, 0, 15, 0, 0 ) ]
+
+[node name="NavSet" type="Node" index="0"]
+
+[node name="NavPolygon" type="Sprite" parent="." index="0"]
+
+modulate = Color( 1, 1, 1, 0.607726 )
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Visibility" ]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="NavPolygon" index="0"]
+
+navpoly = SubResource( 1 )
+enabled = true
+
+

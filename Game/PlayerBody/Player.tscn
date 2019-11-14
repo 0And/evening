@@ -1,0 +1,185 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Assets/Code/Game/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-down-a.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-down.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-down-b.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-left.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-right-a.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-right.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-right-b.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-up.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-left-a.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-left-b.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-up-a.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Art/PlayerAnim/skullo-up-b.png" type="Texture" id=13]
+[ext_resource path="res://Game/Player/Glitch.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Assets/Code/Game/Player/Camera.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Audio/FX/CharMovement.wav" type="AudioStream" id=16]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "moveDown",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "idleLeft",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "moveRight",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": false,
+"name": "idleUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "idleDown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "idleRight",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "moveLeft",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "moveUp",
+"speed": 7.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 7.5, 7.5 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 6.5
+
+[node name="Player" type="KinematicBody2D" index="0" groups=[
+"Player",
+]]
+
+z_index = -2
+input_pickable = false
+collision_layer = 2
+collision_mask = 9
+collision/safe_margin = 0.5
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
+SPEED = 50
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+
+editor/display_folded = true
+frames = SubResource( 1 )
+animation = "idleDown"
+playing = true
+centered = false
+offset = Vector2( -7.5, -7.5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Glitch" parent="Sprite" index="0" instance=ExtResource( 14 )]
+
+visible = false
+margin_left = -8.0
+margin_top = -8.0
+margin_right = 7.0
+margin_bottom = 7.0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Collision" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera" type="Camera2D" parent="." index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+script = ExtResource( 15 )
+_sections_unfolded = [ "Drag Margin", "Limit", "Pause", "Smoothing" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnemyTouch" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 20
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="EnemyTouch" index="0"]
+
+visible = false
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerMoveAudio" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 16 )
+volume_db = -60.0
+autoplay = false
+mix_target = 1
+bus = "Master"
+
+

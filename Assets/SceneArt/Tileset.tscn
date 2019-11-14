@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Art/Blocks/Grass.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/Blocks/Sidewalk.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Blocks/SidewalkCorner.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Blocks/SidewalkSide.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Blocks/SidewalkDown.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Art/Blocks/Road.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Art/Blocks/RoadOneTurn.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Art/Blocks/RoadFourWay.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Art/Blocks/RoadSideShadow.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Art/Blocks/RoadCornerShadow.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Art/Blocks/RoadSide.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Art/Blocks/RoadInsideCornerShadow.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Art/Blocks/RoadStraight.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Art/Blocks/RoadTwoTurns.png" type="Texture" id=14]
+
+[node name="Tileset" type="Node"]
+
+[node name="Grass" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="Sidewalk" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0, 15 )
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="SidewalkCorner" type="Sprite" parent="." index="2"]
+
+position = Vector2( 15, 15 )
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="SidewalkDown" type="Sprite" parent="." index="3"]
+
+position = Vector2( 45, 15 )
+texture = ExtResource( 4 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="SidewalkSide" type="Sprite" parent="." index="4"]
+
+position = Vector2( 30, 15 )
+texture = ExtResource( 5 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="Road" type="Sprite" parent="." index="5"]
+
+position = Vector2( 0, 30 )
+texture = ExtResource( 6 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadOneTurn" type="Sprite" parent="." index="6"]
+
+position = Vector2( 60, 30 )
+texture = ExtResource( 7 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadFourWay" type="Sprite" parent="." index="7"]
+
+position = Vector2( 30, 30 )
+texture = ExtResource( 8 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadSideShadow" type="Sprite" parent="." index="8"]
+
+position = Vector2( 90, 30 )
+texture = ExtResource( 9 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadCornerShadow" type="Sprite" parent="." index="9"]
+
+position = Vector2( 15, 30 )
+texture = ExtResource( 10 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadSide" type="Sprite" parent="." index="10"]
+
+position = Vector2( 75, 30 )
+texture = ExtResource( 11 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadInsideCornerShadow" type="Sprite" parent="." index="11"]
+
+position = Vector2( 45, 30 )
+texture = ExtResource( 12 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadStraight" type="Sprite" parent="." index="12"]
+
+position = Vector2( 105, 30 )
+texture = ExtResource( 13 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="RoadTwoTurns" type="Sprite" parent="." index="13"]
+
+position = Vector2( 120, 30 )
+texture = ExtResource( 14 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+

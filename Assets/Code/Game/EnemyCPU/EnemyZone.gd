@@ -1,0 +1,1 @@
+extends "res://Assets/Code/Game/Items/Zone.gd"

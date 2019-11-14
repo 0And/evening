@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CharMovement.wav-5ad218152ce4bc1442c635ff28f1977e.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/FX/CharMovement.wav"
+dest_files=[ "res://.import/CharMovement.wav-5ad218152ce4bc1442c635ff28f1977e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

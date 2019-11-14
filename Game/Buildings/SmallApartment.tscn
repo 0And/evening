@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Art/Buildings/SmallApartment/SmallApartmentTop.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Art/Buildings/SmallApartment/SmallApartmentTopGoo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Buildings/SmallApartment/SmallApartmentBottom.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Buildings/SmallApartment/SmallApartmentShadow.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Buildings/SmallApartment/SmallApartmentBottomGoo.png" type="Texture" id=5]
+[ext_resource path="res://Game/Buildings/EnterBody.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.5, 2 )
+
+[node name="SmallApartment" type="StaticBody2D" groups=[
+"Building",
+"SmallApartment",
+]]
+
+z_index = -2
+input_pickable = false
+collision_layer = 1
+collision_mask = 6
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision", "Z Index" ]
+
+[node name="Top" type="Sprite" parent="." index="0"]
+
+z_index = 2
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TopGoo" type="Sprite" parent="." index="1" groups=[
+"Goo",
+]]
+
+visible = false
+z_index = 2
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Bottom" type="Sprite" parent="." index="2"]
+
+position = Vector2( 0, 18 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Shadow" type="Sprite" parent="." index="3"]
+
+position = Vector2( 0, 50 )
+z_index = -1
+texture = ExtResource( 4 )
+centered = false
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BottomGoo" type="Sprite" parent="." index="4" groups=[
+"Goo",
+]]
+
+visible = false
+position = Vector2( 0, 18 )
+z_index = -1
+texture = ExtResource( 5 )
+centered = false
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MainCollision" type="CollisionPolygon2D" parent="." index="5"]
+
+build_mode = 0
+polygon = PoolVector2Array( 29, 54, 29, 49, 48, 49, 48, 54, 77, 54, 77, 17, 0, 17, 0, 54 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="MonsterCollision" type="CollisionShape2D" parent="." index="6"]
+
+position = Vector2( 38.5, 52 )
+shape = SubResource( 1 )
+disabled = true
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="EnterBody" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 38, 48 )
+
+
