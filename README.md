@@ -1,4 +1,9 @@
 ### In the Evening
-In the Evening is a top-down 2D survival simulation.
+A top-down 2D survival game developed with GDScript, a python-like language.
 
-[![In the Evening logo](/Settings/Logo.png)](#)
+---
+
+<div style="display: flex;">
+  <img src="/Settings/Logo.png" height="55" />
+  <img src="/Assets/Art/Menu/Title.png" height="55" />
+</div>
